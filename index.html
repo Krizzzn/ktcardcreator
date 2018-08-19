@@ -10,51 +10,1659 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/unsemantic-grid-responsive.css">
-
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-        <!--[if lt IE 9]>
-            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-        <![endif]-->
+        <link rel='stylesheet' href='css/killteam.css' />
     </head>
-    <body>
+<body>
+    <style>
+        @media screen {
+            .controls {
 
-        <div class="header-container">
-            <div class="grid-container">
-                <div class="logo"></div>
-            </div>
+            }
+        }
+        @media print {
+            .controls {
+                display:none;
+            }        
+        }
+
+        .ActionButton {
+            font-size:20px;
+        }
+    </style>
+    <script src="lib.js"></script>  
+    <div class=controls>
+        <h1>Krizzzns's BattleScribe Roster Cleaner</h1>
+        Select a BattleScribe HTML Roster File (v. 1.15.07) below. 
+        <i>(No data is sent to the server when you select your file.)</i>
+        <BR> When you print, this control section will be removed automatically.<P>
+        Make sure to print backgrounds to get headerbars.
+    
+     <fieldset>
+     <legend>Input File</legend>
+        <input type=file id=ul  onchange="getFile()" class=ActionButton>
+    </fieldset>
+    <!--Faction: <select id=logoPicker onChange='changeLogo()'>
+        <option >None</option>
+        <option value='soro.png'>Adepta Sororitas</option>
+        <option>Adeptus Mechanicus</option>
+        <option>Chaos</option>
+        <option>Chaos Space Marine</option>
+        <option>Daemon</option>
+        <option>Dark Eldar</option>
+        <option>Dark Mechanicus</option>
+        <option>Eldar</option>
+        <option>Forces of Chaos</option>
+        <option>Imperial Guard</option>
+        <option>Imperial Navy</option>
+        <option>Imperium of Man</option>
+        <option>Lost and the Damned</option>
+        <option>Necrons</option>
+        <option>Orks</option>
+        <option>Space Marines</option>
+        <option value='tau.png'>Tau</option>
+        <option>Tyranids</option>
+        </select><BR>-->
+
+ 
+   
+ <fieldset>
+     <legend>Elements to Include</legend>
+
+     <label for="pageBreak">Section Page Breaks</label>
+    <input class=cb type=checkbox name="pageBreak" id=pageBreak onChange="cleanUp()" checked />
+
+    <label for="armyName">Army Name</label>
+    <input class=cb type=checkbox name="armyName" id=armyName onChange="cleanUp()" checked />
+
+    <label for='forceType'>Force Type</label>
+    <input class=cb type=checkbox name='forceType' id=forceType onChange="cleanUp()" checked/> 
+
+    <label for='battleRole'> Battle Roles</label>
+    <input class=cb type=checkbox name='battleRole' id=battleRole onChange="cleanUp()" checked>
+
+    <label for='summary'>Summary</label>
+    <input class=cb type=checkbox name='summaryPage' id=summary onChange="cleanUp()" checked>
+
+    <label for='outlinePage'>Outline</label>
+    <input class=cb type=checkbox name='outlinePage' id=outlinePage onChange="cleanUp()" checked>
+
+ </fieldset>
+  <fieldset>
+     <legend>Colors</legend>
+    <table>
+        <tr>
+            <td>
+                <input type='text' id="colorHeader" /> Main Header
+            </td>
+            <td>
+                <input type='text' id="colorUnitHeader" /> Unit Header
+            </td>
+            <td>
+                <input type='text' id="colorTableHeader" /> Table Header
+            </td>
+            <td>
+                <input type='text' id="colorSummaryNames" /> Summary Names
+            </td>        
+        </tr>
+    </table>
+  </fieldset><P>
+    <button onclick="window.print()" id=printButton class=ActionButton style='display:none'>Print This Roster</button>
+    
+    <HR>
+    </div>
+    <div id=content>
+        
+                <div class="battlescribe">
+            <h1>Kill Team: Genestealer Cult - Command Roster (Warhammer 40,000: Kill Team (2018)) [166pts]</h1>
+            <ul>
+            <li class="force">
+                <h2>Kill Team List (Genestealer Cults) [166pts]</h2>
+                <ul>
+                    <li class="category">
+                        <h3>Configuration</h3>
+                        <ul>
+                            <li class="rootselection">
+                                <h4>List Configuration</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Matched Play: Command Roster
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Configuration, List: Command Roster, Style: Matched</span>
+                                </p>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="category">
+                        <h3>Leaders [18pts]</h3>
+                        <ul>
+                            <li class="rootselection">
+                                <h4>Metamorph Leader [12pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Hand Flamer [2pts], Leader, Metamorph Claw [1pts], Rending Claw
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Leader</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Metamorph Leader</span>, <span class="bold">Weapon:</span> <span class="italic">Blasting Charge, Hand Flamer, Metamorph Claw, Rending Claw</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Resourceful</td>
+                                            <td>As long as this model is on the battlefield and not shaken, you gain an additional Command Point at the beginning of the battle round.</td>
+                                            <td>
+                                                Core Manual p68
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Metamorph Leader</td>
+                                            <td>6&quot;</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>1</td><td>4</td><td>8</td><td>5+</td><td>1</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Hand Flamer</td>
+                                            <td>6&quot;</td><td>Pistol D3</td><td>3</td><td>0</td><td>1</td><td>This weapon automatically hits its target.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Metamorph Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>+2</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Leader [6pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autogun, Autopistol, Leader
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Leader</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Leader</span>, <span class="bold">Weapon:</span> <span class="italic">Autogun, Autopistol, Blasting Charge</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Resourceful</td>
+                                            <td>As long as this model is on the battlefield and not shaken, you gain an additional Command Point at the beginning of the battle round.</td>
+                                            <td>
+                                                Core Manual p68
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Leader</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>2</td><td>8</td><td>5+</td><td>1</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autogun</td>
+                                            <td>24&quot;</td><td>Rapid Fire 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="category">
+                        <h3>Specialists [51pts]</h3>
+                        <ul>
+                            <li class="rootselection">
+                                <h4>Genestealer [12pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Combat, Extended Carapace, Flesh Hooks, Toxin Sacs [1pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Tyranids, Infantry, Model, Specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Extended Carapace, Lightning Reflexes, Toxin Sacs</span>, <span class="bold">Model:</span> <span class="italic">Genestealer (Extended Carapace)</span>, <span class="bold">Weapon:</span> <span class="italic">Flesh Hooks, Rending Claws</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Expert Fighter</td>
+                                            <td>Add 1 to this model&apos;s Attacks characteristic.</td>
+                                            <td>
+                                                Core Manual p69
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Extended Carapace</td>
+                                            <td>A model with an extended carapace has a save characteristic of 4+ but loses the Swift and Deadly ability.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Lightning Reflexes</td>
+                                            <td>This model has a 5+ invulnerable save.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Toxin Sacs</td>
+                                            <td>Any wound rolls of 6+ in the Fight phase for a model with toxin sacs cause 1 additional damage.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Genestealer (Extended Carapace)</td>
+                                            <td>8&quot;</td><td>3+</td><td>4+</td><td>4</td><td>4</td><td>1</td><td>3</td><td>9</td><td>4+</td><td>-</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Flesh Hooks</td>
+                                            <td>6&quot;</td><td>Assault 2</td><td>User</td><td>0</td><td>1</td><td>The weapon can be fired within 1&quot; of an enemy model, and can target enemy models within 1&quot; of friendly models.</td>
+                                            <td>
+                                                Core Manual p180
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claws</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p180
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Hybrid Metamorph [13pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autopistol, Cult Icon [5pts], Metamorph Talon, Rending Claw, Zealot
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush, Cult Icon</span>, <span class="bold">Model:</span> <span class="italic">Hybrid Metamorph</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Metamorph Talon, Rending Claw</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Icon</td>
+                                            <td>You can re-roll hit rolls of 1 for models within 6&quot; of a friendly model with a cult icon in the Fight phase.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Frenzied</td>
+                                            <td>You can add 1 to this model&apos;s Attacks and Strength characteristics in a battle round in which they charged.</td>
+                                            <td>
+                                                Core Manual p77
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Hybrid Metamorph</td>
+                                            <td>6&quot;</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>1</td><td>3</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Metamorph Talon</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>0</td><td>1</td><td>Add 1 to hit rolls for this weapon.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Hybrid Metamorph [10pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Hand Flamer [2pts], Metamorph Talon, Rending Claw, Zealot
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Hybrid Metamorph</span>, <span class="bold">Weapon:</span> <span class="italic">Blasting Charge, Hand Flamer, Metamorph Talon, Rending Claw</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Frenzied</td>
+                                            <td>You can add 1 to this model&apos;s Attacks and Strength characteristics in a battle round in which they charged.</td>
+                                            <td>
+                                                Core Manual p77
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Hybrid Metamorph</td>
+                                            <td>6&quot;</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>1</td><td>3</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Hand Flamer</td>
+                                            <td>6&quot;</td><td>Pistol D3</td><td>3</td><td>0</td><td>1</td><td>This weapon automatically hits its target.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Metamorph Talon</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>0</td><td>1</td><td>Add 1 to hit rolls for this weapon.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [8pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Grenade Launcher [2pts], Heavy
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Grenade Launcher (Frag), Grenade Launcher (Krak)</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Relentless</td>
+                                            <td>This model does not suffer the -1 penalty for shooting with a Heavy weapon after moving in the preceding Movement phase, or for shooting an Assault weapon after Advancing.</td>
+                                            <td>
+                                                Core Manual p72
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Grenade Launcher (Frag)</td>
+                                            <td>24&quot;</td><td>Assault D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Grenade Launcher (Krak)</td>
+                                            <td>24&quot;</td><td>Assault 1</td><td>6</td><td>-1</td><td>D3</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [8pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Demolitions, Seismic Cannon [2pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Seismic Cannon (Long-wave), Seismic Cannon (Short-wave)</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Breacher</td>
+                                            <td>You can add 1 to this model&apos;s wound rolls against targets that are obscured.</td>
+                                            <td>
+                                                Core Manual p71
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Seismic Cannon (Long-wave)</td>
+                                            <td>24&quot;</td><td>Heavy 4</td><td>3</td><td>0</td><td>1</td><td>All wound rolls of 6+ have an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Seismic Cannon (Short-wave)</td>
+                                            <td>12&quot;</td><td>Heavy 2</td><td>6</td><td>-1</td><td>2</td><td>All wound rolls of 6+ have an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="category">
+                        <h3>Non-specialists [97pts]</h3>
+                        <ul>
+                            <li class="rootselection">
+                                <h4>Acolyte Fighter [8pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autopistol, Cultist Knife, Rending Claw
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Acolyte Fighter</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Cultist Knife, Rending Claw</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Acolyte Fighter</td>
+                                            <td>6&quot;</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>1</td><td>2</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p186
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cultist Knife</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>0</td><td>1</td><td>Each time the bearer fights, it can make 1 additional attack with this weapon.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Genestealer [11pts]</h4>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Lightning Reflexes, Swift and Deadly</span>, <span class="bold">Model:</span> <span class="italic">Genestealer</span>, <span class="bold">Weapon:</span> <span class="italic">Rending Claws</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Lightning Reflexes</td>
+                                            <td>This model has a 5+ invulnerable save.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Swift and Deadly</td>
+                                            <td>You can re-roll failed charge rolls for this model.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Genestealer</td>
+                                            <td>8&quot;</td><td>3+</td><td>4+</td><td>4</td><td>4</td><td>1</td><td>3</td><td>9</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claws</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p180
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Genestealer [11pts]</h4>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Lightning Reflexes, Swift and Deadly</span>, <span class="bold">Model:</span> <span class="italic">Genestealer</span>, <span class="bold">Weapon:</span> <span class="italic">Rending Claws</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Lightning Reflexes</td>
+                                            <td>This model has a 5+ invulnerable save.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Swift and Deadly</td>
+                                            <td>You can re-roll failed charge rolls for this model.</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Genestealer</td>
+                                            <td>8&quot;</td><td>3+</td><td>4+</td><td>4</td><td>4</td><td>1</td><td>3</td><td>9</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p179
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claws</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p180
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Hybrid Metamorph [8pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autopistol, Metamorph Talon, Rending Claw
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Hybrid Metamorph</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Metamorph Talon, Rending Claw</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Hybrid Metamorph</td>
+                                            <td>6&quot;</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>1</td><td>3</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Metamorph Talon</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>0</td><td>1</td><td>Add 1 to hit rolls for this weapon.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Rending Claw</td>
+                                            <td>Melee</td><td>Melee</td><td>User</td><td>-1</td><td>1</td><td>Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -4.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [8pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Grenade Launcher [2pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Grenade Launcher (Frag), Grenade Launcher (Krak)</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Grenade Launcher (Frag)</td>
+                                            <td>24&quot;</td><td>Assault D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Grenade Launcher (Krak)</td>
+                                            <td>24&quot;</td><td>Assault 1</td><td>6</td><td>-1</td><td>D3</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [9pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Flamer [3pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Flamer</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Flamer</td>
+                                            <td>8&quot;</td><td>Assault D6</td><td>4</td><td>0</td><td>1</td><td>This weapon automatically hits its target.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [9pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Mining Laser [3pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Mining Laser</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Mining Laser</td>
+                                            <td>24&quot;</td><td>Heavy 1</td><td>9</td><td>-3</td><td>D3</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [6pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Heavy Stubber
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Heavy Stubber</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Heavy Stubber</td>
+                                            <td>36&quot;</td><td>Heavy 3</td><td>4</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Gunner [7pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Webber [1pts]
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Gunner</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Webber</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Gunner</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>4</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Webber</td>
+                                            <td>16&quot;</td><td>Assault D3</td><td>4</td><td>0</td><td>1</td><td>When making a shooting attack with a web weapon, you can either use the Strength or Toughness characteristic of the target to determine the wound roll - whichever is lowest.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Hybrid [5pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autogun
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Hybrid</span>, <span class="bold">Weapon:</span> <span class="italic">Autogun, Autopistol, Blasting Charge</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Hybrid</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autogun</td>
+                                            <td>24&quot;</td><td>Rapid Fire 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Hybrid [5pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Shotgun
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Hybrid</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Shotgun</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Hybrid</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Shotgun</td>
+                                            <td>12&quot;</td><td>Assault 2</td><td>3</td><td>0</td><td>1</td><td>If the target is within half range, add 1 to the weapon&apos;s Strength.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Hybrid [5pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Shotgun
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Hybrid</span>, <span class="bold">Weapon:</span> <span class="italic">Autopistol, Blasting Charge, Shotgun</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Hybrid</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Shotgun</td>
+                                            <td>12&quot;</td><td>Assault 2</td><td>3</td><td>0</td><td>1</td><td>If the target is within half range, add 1 to the weapon&apos;s Strength.</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                            <li class="rootselection">
+                                <h4>Neophyte Hybrid [5pts]</h4>
+                                <p>
+                                    <span class="bold">Selections:</span> Autogun
+                                </p>
+                                <p class="category-names">
+                                    <span class="bold">Categories:</span> <span class="caps">Faction: Genestealer Cults, Tyranids, Infantry, Model, Non-specialist</span>
+                                </p>
+                                <p class="profile-names">
+                                    <span class="bold">Ability:</span> <span class="italic">Cult Ambush</span>, <span class="bold">Model:</span> <span class="italic">Neophyte Hybrid</span>, <span class="bold">Weapon:</span> <span class="italic">Autogun, Autopistol, Blasting Charge</span>
+                                </p>
+                                    <br>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Description</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Cult Ambush</td>
+                                            <td>After deployment but before the first battle round, roll a D6 for this model. On a 5+ this model can immediately move up to 6&quot;.</td>
+                                            <td>
+                                                Core Manual
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>A</th><th>Ld</th><th>Sv</th><th>Max</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Neophyte Hybrid</td>
+                                            <td>6&quot;</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>1</td><td>7</td><td>5+</td><td>-</td>
+                                            <td>
+                                                Core Manual p187
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table cellspacing="-1">
+                                        <tr>
+                                            <th>Weapon</th>
+                                            <th>Range</th><th>Type</th><th>S</th><th>AP</th><th>D</th><th>Abilities</th>
+                                            <th>Ref</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autogun</td>
+                                            <td>24&quot;</td><td>Rapid Fire 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Autopistol</td>
+                                            <td>12&quot;</td><td>Pistol 1</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="profile-name">Blasting Charge</td>
+                                            <td>6&quot;</td><td>Grenade D6</td><td>3</td><td>0</td><td>1</td><td>-</td>
+                                            <td>
+                                                Core Manual p188
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+
+            </ul>
+
+
+
+            <br>
+            <p>Created with <a href="http://www.battlescribe.net">BattleScribe</a></p>
         </div>
-        <div class="main-container grid-container">
-            <div class="main grid-100 grid-parent">
-                
-                <h1 class="grid-100">My little boiler plate*<br> <small>for static web sites</small></h1>
-                
-                <hr>
 
-
-                <article class="grid-33">
-                    <h2>Step 0:</h2><code>npm install -g grunt-cli</code>
-                </article>
-                <article class="grid-33">
-                    <h2>Step 1:</h2><code>npm install</code>
-                </article>
-                <article class="grid-33">
-                    <h2>Step 2:</h2><code>grunt server</code>
-                </article>                
-                <article class="grid-33">
-                    <h2>Step 3:</h2>open <a href="http://localhost:9000/">localhost:9000/</a>
-                </article>                
-                <article class="grid-33">
-                    <h2>Step 4:</h2>*hackety hack*
-                </article>
-
-                <hr class="grid-100">
-                <article class="grid-100"><small>* with a muy awesome auto-reload \o/</small></article>
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+    </div>
+    <div id=outline></div>
     </body>
 </html>

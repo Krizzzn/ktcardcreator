@@ -1,0 +1,275 @@
+
+body.battlescribe {
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    
+}
+
+div.battlescribe {
+    width: 96%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    border-width: 0px;
+    
+    font-family: 'Ubuntu', sans-serif;
+
+    color: #444444;
+    text-align: left;
+}
+
+div.battlescribe h1,
+div.battlescribe h2,
+div.battlescribe h3,
+div.battlescribe h4 {
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    
+}
+
+div.battlescribe h1 {
+    margin: 8px 0px 0px 0px;
+    /*background-image: url("logo.png"); */
+    /*background-size: 35px 35px;*/
+    background-repeat: no-repeat;
+    /*padding-left:40px;*/
+
+}
+
+div.battlescribe h2 {
+    
+
+}
+
+div.force> h2 {
+
+}
+div.summary> h2 {
+
+}
+div.battlescribe h3 {
+
+
+}
+
+div.battlescribe h4 {
+
+}
+
+div.battlescribe div.force {
+    margin: 18px 0px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+}
+
+div.battlescribe div.summary {
+    margin: 16px 0px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+}
+
+div.battlescribe ul {
+    margin: 0px 0px 0px 6px;
+    padding: 0px;
+    border-width: 0px;
+    
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+}
+
+div.battlescribe li {
+    margin: 8px 0px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+}
+
+div.battlescribe li.category {
+    margin: 16px 0px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+}
+
+#content>div.battlescribe li.rootselection {
+    margin: 10px 0px 0px 0px;
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
+    page-break-after:always;
+    break-after:always;
+
+    -moz-box-shadow: 8px 8px 5px #888;
+    -webkit-box-shadow: 8px 8px 5px #888;
+    box-shadow: 8px 8px 5px #888;
+}
+
+#outline {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    page-break-after:always;
+    break-after:always;
+}
+#outline li.gizmo, #outline h3, #outline h1, #outline h2, #outline h4{
+    padding:0px!important;
+    margin:0px!important;
+    -webkit-margin-before: 0px!important;
+    -webkit-margin-after: 0px!important;
+}
+#outline h1{ display:none}
+
+
+
+
+#outline>div.battlescribe li.rootselection {
+    margin: 10px 0px 0px 0px;
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
+
+    /*-moz-box-shadow: 8px 8px 5px #888;
+    -webkit-box-shadow: 8px 8px 5px #888;
+    box-shadow: 8px 8px 5px #888;*/
+}
+
+
+
+li.rootselection table:first-of-type{
+
+}
+
+table tr:first-of-type th{
+    background-color: lightgreen;
+}
+div.battlescribe li.rootselection>h4{
+
+    background-color:lightgrey;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:3px 0px 3px 8px;
+}
+div.battlescribe li.rootselection>ul>li>h4{
+    background-color:lightblue;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:3px 0px 3px 8px;
+}
+div.battlescribe li.rootselection>ul>li>ul{
+    margin-left: 6px!important;
+}
+
+div.battlescribe li.rootselection table:first-of-type tr td{
+    border-left:1pt lightgrey solid;
+    min-width: 15px;
+}
+
+
+div.battlescribe p {
+    margin: 4px 0px 0px 16px;
+    padding: 0px;
+    border-width: 0px;
+    
+
+}
+
+div.battlescribe table {
+    margin: 8px 0px 0px 16px;
+    padding: 0px;
+    border-collapse: collapse;
+    
+
+    color: #444444;
+}
+
+div.battlescribe tr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
+}
+
+div.battlescribe th {
+    padding: 4px;
+    margin: 0px;
+    border-width: 0px;
+    
+    font-weight: bold;
+    text-align: left;
+}
+
+div.battlescribe td {
+    padding: 4px;
+    margin: 0px;
+    border-width: 0px;
+    
+    text-align: left;
+}
+
+div.battlescribe table.statistics {
+}
+
+div.battlescribe table.statistics tr.subtotal {
+    font-weight: bold;
+}
+
+div.battlescribe table.statistics tr.total {
+
+    font-weight: bold;
+}
+
+div.battlescribe table.statistics th {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
+    
+
+    text-align: right;
+}
+
+div.battlescribe table.statistics th.center {
+    text-align: center;
+}
+
+div.battlescribe table.statistics td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
+    
+    text-align: right;
+}
+
+div.battlescribe .italic {
+    font-style: italic;
+}
+
+div.battlescribe .bold {
+    font-weight: bold;
+}
+
+div.summary>p {
+    border-bottom: 1pt solid grey;
+    padding-bottom: 10px;
+    line-height: 18px;
+}
+div.summary>p>span.bold {
+
+    font-weight:bold;
+    margin-right:10px;
+
+     background-color:lightgreen;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:3px 8px 3px 8px;
+}
