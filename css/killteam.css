@@ -19,6 +19,9 @@ div.battlescribe {
 
     color: #444444;
     text-align: left;
+
+    font-size: 6pt;
+
 }
 
 div.battlescribe h1,
@@ -32,6 +35,7 @@ div.battlescribe h4 {
 }
 
 div.battlescribe h1 {
+    display: none;
     margin: 8px 0px 0px 0px;
     /*background-image: url("logo.png"); */
     /*background-size: 35px 35px;*/
@@ -100,13 +104,37 @@ div.battlescribe li.category {
     border-width: 1px;
     border-style: solid;
     border-color: #BBBBBB;
+    
+    width: 45%;
+
+    min-height: 400px;
+    float: left;
     page-break-after:always;
     break-after:always;
-
-    -moz-box-shadow: 8px 8px 5px #888;
-    -webkit-box-shadow: 8px 8px 5px #888;
-    box-shadow: 8px 8px 5px #888;
 }
+
+.clear{
+    float:left;
+    clear: both;
+    width: 100%;
+    height: 30px;
+    background-color: red;
+}
+
+.paging{
+    page-break-after:always;
+    break-after:always;
+    background-color: red;
+}
+
+#content>div.battlescribe table {
+    width: 95%;
+}
+
+.abilities {
+    display: none;
+}
+
 
 #outline {
     -webkit-column-count: 2; /* Chrome, Safari, Opera */

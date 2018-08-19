@@ -90,9 +90,29 @@ function remover(){
     }
 
     $(document).ready(function(){
-        $("#colorHeader").spectrum({color: "#c4c4c4", change: cleanUp });
-        $("#colorUnitHeader").spectrum({color: "lightblue", change: cleanUp });
-        $("#colorTableHeader").spectrum({color: "lightgreen", change: cleanUp });
-        $("#colorSummaryNames").spectrum({color: "lightgreen", change: cleanUp });
-        $(".cb").checkboxradio({icon:false});
+
+        $("#content>div.battlescribe li.rootselection").each(function(){
+            $(this).children("table:first").addClass('abilities');
+        });
+
+        $("#content li.category").each(function(index, el) {
+           var category = $(this).children('h3').text(); 
+           console.log(category);
+           $(this).find('ul li.rootselection h4').text(function() {return $(this).text() + " - " + category;});
+           $(this).children('h3').remove();
+        });
+
+        $("li.rootselection").each(function(index, el) {
+            if (index % 4 !== 3)
+                return;
+
+            $(this).addClass('paging');
+            $('<li class="clear">-----</li>').insertAfter($(this));
+        });
+
+//        $("#colorHeader").spectrum({color: "#c4c4c4", change: cleanUp });
+//        $("#colorUnitHeader").spectrum({color: "lightblue", change: cleanUp });
+//        $("#colorTableHeader").spectrum({color: "lightgreen", change: cleanUp });
+//        $("#colorSummaryNames").spectrum({color: "lightgreen", change: cleanUp });
+//        $(".cb").checkboxradio({icon:false});
     });
