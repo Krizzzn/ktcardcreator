@@ -1,73 +1,19 @@
-function remover(){
+    function remover(){
+
         $("#content style").remove();
-        $("#outline style").remove();
+        $("#outline").remove();
 
         $("#outline>div.battlescribe>div.summary").remove();
         $("#outline p").remove();
         $("#outline table").remove();
         //$("#outline li.rootselection>ul>li>ul").remove();
         $("#outline>div.battlescribe").removeClass("battlescribe");
-        $("#outline li.rootselection").addClass("gizmo");
         $("#outline li.rootselection").removeClass("rootselection");
 
-        var extra = " <link rel=stylesheet href=gizmoscribe.css> ";
+        $(".battlescribe > p").remove();
 
-        $("#content").prepend(extra);
-
-        cleanUp();
+        toKillTeamRoster()
     }    
-    function cleanUp(){
-
-        $("li.rootselection>h4").css("background-color",$("#colorHeader").spectrum('get').toHexString());
-        $("li.rootselection>ul>li>h4").css("background-color",$("#colorUnitHeader").spectrum('get').toHexString());
-        $("table tr:first-of-type th").css("background-color",$("#colorTableHeader").spectrum('get').toHexString());
-        $("div.summary>p>span.bold ").css("background-color",$("#colorSummaryNames").spectrum('get').toHexString());
-
-        if($("#pageBreak").is(":checked")){
-            $("#content>div.battlescribe").css( {"page-break-after":"always","break-after":"always"});
-            $("li.rootselection").css( {"page-break-after":"always","break-after":"always"});
-            $("#outline").css( {"page-break-after":"always","break-after":"always"});
-            $("#outline").css( {"page-break-after":"always","break-after":"always"});
-        } else {
-            $("#content>div.battlescribe").css( {"page-break-after":"auto","break-after":"auto"});
-            $("li.rootselection").css( {"page-break-after":"auto","break-after":"auto"});
-            $("#outline").css( {"page-break-after":"auto","break-after":"auto"});
-            $("#outline").css( {"page-break-after":"auto","break-after":"auto"});
-        }
-
-        if(!$("#armyName").is(":checked")){
-            $("div.battlescribe h1").hide('slow');
-        } else {
-            $("div.battlescribe h1").show('slow');
-        }
-
-        if(!$("#forceType").is(":checked")){
-            $("div.battlescribe>div.force>h2:first-of-type").hide('slow');
-        }  else {
-            $("div.battlescribe>div.force>h2:first-of-type").show('slow');
-        }   
-
-
-        if(!$("#battleRole").is(":checked")){
-            $("div.battlescribe h3").hide('slow');
-        }   else  {
-            $("div.battlescribe h3").show('slow');
-        }
-
-        if(!$("#summary").is(":checked")){
-            $("div.summary").hide('slow');
-        }   else  {
-            $("div.summary").show('slow');
-        }
-
-        if(!$("#outlinePage").is(":checked")){
-            $("#outline").hide('slow');
-        }   else  {
-            $("#outline").show('slow');
-        }
-
-
-    }
 
     function getFile(){
         $("#content").html("");
@@ -89,30 +35,133 @@ function remover(){
         $('#logo').attr("src",$("#logoPicker").val());
     }
 
-    $(document).ready(function(){
+    function getWounds(page){
+        var table = getTable(page, "Model");
+
+        if (!table)
+            return null;
+
+        var number = $(table).find("td")[6];
+        if (!number)
+            return null;
+
+        return parseInt($(number).text());
+    }
+
+    function getTable(baseElement, find){
+        var table = $(baseElement).find("table");
+
+        for (var i = 0; i < table.length; i++) {
+            if ($(table[i]).find("th:first").text() == find)
+                return table[i];
+        }
+        return null;
+    }
+
+    function getPoints(baseElement) {
+        var name = $(baseElement).find("h4").text();
+        name = name.replace(/\[\d{1,3}pts\]$/, "");
+        $(baseElement).find("h4").text(name);
+        return (name.match(/\d{1,3}pts/) || [""])[0]
+    }
+
+    function readSpecialAbilities(baseElement)
+    {    
+        var abilities = $(baseElement).find(".profile-names:first").html();
+        var item = $(baseElement).find(".profile-names:first").find("span");
+
+        $(baseElement).find(".abilities tr").each(function(index, elem) {
+            var ability = $(this).find(".profile-name").text();
+
+            if (ability.length > 1 && abilities.indexOf(ability) < 1){
+                $(item[1]).text( ability + ", " + $(item[1]).text()  )
+            }
+        });
+    }
+
+    function renderWoundTracker(baseElement)
+    {
+        var woundtracker = $("#templates .wounds");
+        var wounds = getWounds(baseElement);
+
+        if (wounds && !isNaN(wounds)){
+            $(baseElement).append(woundtracker.clone());
+            $(baseElement).find('.wound').slice(wounds).remove();
+
+            var points = getPoints(baseElement);
+            if (points) {
+                $(baseElement).append('<div class="points">' + points.replace(/pts/, '<small> pts</small>') + '</div>'); 
+            }
+        }
+    }
+
+    function toKillTeamRoster(){
 
         $("#content>div.battlescribe li.rootselection").each(function(){
-            $(this).children("table:first").addClass('abilities');
+            var t = getTable(this, "Ability");
+            $(t).addClass('abilities');
         });
 
         $("#content li.category").each(function(index, el) {
            var category = $(this).children('h3').text(); 
-           console.log(category);
-           $(this).find('ul li.rootselection h4').text(function() {return $(this).text() + " - " + category;});
+           $(this).find('ul li.rootselection h4').append(" - " + category);
            $(this).children('h3').remove();
         });
 
-        $("li.rootselection").each(function(index, el) {
-            if (index % 4 !== 3)
-                return;
+        var pages = [];
+        var curr;
 
-            $(this).addClass('paging');
-            $('<li class="clear">-----</li>').insertAfter($(this));
+        $("li.rootselection").each(function(index, el) {
+            if (index % 4 === 0){
+                curr = [];
+                pages.push(curr);
+            }
+            
+            renderWoundTracker(this);
+            readSpecialAbilities(this);
+            
+            curr.push($(this).clone());
+            $(this).remove();
         });
 
-//        $("#colorHeader").spectrum({color: "#c4c4c4", change: cleanUp });
-//        $("#colorUnitHeader").spectrum({color: "lightblue", change: cleanUp });
-//        $("#colorTableHeader").spectrum({color: "lightgreen", change: cleanUp });
-//        $("#colorSummaryNames").spectrum({color: "lightgreen", change: cleanUp });
-//        $(".cb").checkboxradio({icon:false});
-    });
+        $(pages).each(function(index, el) {
+            var page = $('<ul class="page"></ul>');
+            page.append(el);
+            $("#content>div.battlescribe").append(page);
+        });
+
+        $(".force").remove();
+
+        var abilities = {};
+
+        $(".abilities tr").each(function(index, elem) {
+            var ability = $(this).find(".profile-name").text();
+            abilities[ability] = $(this).clone();
+        });
+
+        var abTable = $('<ul><li><table class="abilities-table"><tbody></tbody></table></li></ul>');
+        $("#content>div.battlescribe").append(abTable);
+        $.each(abilities, function(key, el) {
+            abTable.find('tbody').append($(el));             
+        });
+
+        var summary = $("div.summary").remove();
+
+        var target = $(".rootselection:first");
+        target.addClass('overview');
+        target.detach();
+
+        target.append(abTable);
+        target.append(summary);
+
+        var firstpage = $('<ul class="page"></ul>');
+        firstpage.append(target);
+        firstpage.insertBefore(".page:first");
+
+
+        var head = $(".battlescribe h1").first().remove();
+
+        $("ul.page h4").first().text(head.text())        
+    }
+
+ //   $(document).ready();

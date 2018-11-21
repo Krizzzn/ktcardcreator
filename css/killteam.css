@@ -1,4 +1,12 @@
 
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.controls > h1{
+    margin-bottom: 0px; 
+}
+
 body.battlescribe {
     margin: 0px;
     padding: 0px;
@@ -7,15 +15,11 @@ body.battlescribe {
 }
 
 div.battlescribe {
-    width: 96%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px;
+    padding: 0px;
     border-width: 0px;
-    
-    font-family: 'Ubuntu', sans-serif;
 
     color: #444444;
     text-align: left;
@@ -61,17 +65,18 @@ div.battlescribe h3 {
 }
 
 div.battlescribe h4 {
-
+    font-size: 1.4em;
+    border: 1px solid grey;
 }
 
 div.battlescribe div.force {
-    margin: 18px 0px 0px 0px;
+    margin: 2px 0px 0px 0px;
     padding: 0px;
     border-width: 0px;
 }
 
 div.battlescribe div.summary {
-    margin: 16px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
     border-width: 0px;
 }
@@ -87,7 +92,7 @@ div.battlescribe ul {
 }
 
 div.battlescribe li {
-    margin: 8px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
     border-width: 0px;
 }
@@ -96,6 +101,26 @@ div.battlescribe li.category {
     margin: 16px 0px 0px 0px;
     padding: 0px;
     border-width: 0px;
+
+}
+
+div.battlescribe li.category ul {
+     display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.page {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    page-break-after:always;
+    break-after:always;   
+
+    /*border: 3px dotted grey!important;*/
 }
 
 #content>div.battlescribe li.rootselection {
@@ -107,10 +132,18 @@ div.battlescribe li.category {
     
     width: 45%;
 
-    min-height: 400px;
-    float: left;
+    min-height: 420px;
+
+    position: relative;
+}
+
+#content>div.battlescribe li.rootselection.overview {
+    width: 99%!important;
+    min-height: 420px;
+    position: relative;
+
     page-break-after:always;
-    break-after:always;
+    break-after:always;   
 }
 
 .clear{
@@ -121,14 +154,8 @@ div.battlescribe li.category {
     background-color: red;
 }
 
-.paging{
-    page-break-after:always;
-    break-after:always;
-    background-color: red;
-}
-
 #content>div.battlescribe table {
-    width: 95%;
+    width: 100%;
 }
 
 .abilities {
@@ -136,24 +163,13 @@ div.battlescribe li.category {
 }
 
 
-#outline {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
 
-    page-break-after:always;
-    break-after:always;
-}
 #outline li.gizmo, #outline h3, #outline h1, #outline h2, #outline h4{
     padding:0px!important;
     margin:0px!important;
     -webkit-margin-before: 0px!important;
     -webkit-margin-after: 0px!important;
 }
-#outline h1{ display:none}
-
-
-
 
 #outline>div.battlescribe li.rootselection {
     margin: 10px 0px 0px 0px;
@@ -167,7 +183,9 @@ div.battlescribe li.category {
     box-shadow: 8px 8px 5px #888;*/
 }
 
-
+.rootselection p{
+    font-size: 1.5em;
+}
 
 li.rootselection table:first-of-type{
 
@@ -186,12 +204,8 @@ div.battlescribe li.rootselection>h4{
     padding:3px 0px 3px 8px;
 }
 div.battlescribe li.rootselection>ul>li>h4{
-    background-color:lightblue;
-
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding:3px 0px 3px 8px;
+    border: none;
+    padding:10px 0px 3px 0px;
 }
 div.battlescribe li.rootselection>ul>li>ul{
     margin-left: 6px!important;
@@ -204,19 +218,18 @@ div.battlescribe li.rootselection table:first-of-type tr td{
 
 
 div.battlescribe p {
-    margin: 4px 0px 0px 16px;
+    margin: 6px 0px 0px 0px;
     padding: 0px;
     border-width: 0px;
-    
-
 }
 
 div.battlescribe table {
-    margin: 8px 0px 0px 16px;
+    margin: 8px 0px 0px 0px;
     padding: 0px;
     border-collapse: collapse;
-    
 
+    font-size: .90em;
+    
     color: #444444;
 }
 
@@ -227,7 +240,7 @@ div.battlescribe tr {
 }
 
 div.battlescribe th {
-    padding: 4px;
+    padding: 1px;
     margin: 0px;
     border-width: 0px;
     
@@ -236,7 +249,7 @@ div.battlescribe th {
 }
 
 div.battlescribe td {
-    padding: 4px;
+    padding: 1px;
     margin: 0px;
     border-width: 0px;
     
@@ -284,20 +297,66 @@ div.battlescribe .bold {
     font-weight: bold;
 }
 
+div.summary{
+    font-size: .75em;
+}
+
 div.summary>p {
     border-bottom: 1pt solid grey;
-    padding-bottom: 10px;
-    line-height: 18px;
+    padding-bottom: 2px;
 }
 div.summary>p>span.bold {
 
     font-weight:bold;
-    margin-right:10px;
+    margin-right:5px;
+}
 
-     background-color:lightgreen;
+div.summary h2 {
+    display: none;
+}
 
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding:3px 8px 3px 8px;
+ul.wounds
+{
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+ul.wounds li.title{
+    width: 20px;
+    border: 0px;
+}
+
+ul.wounds li{
+    font-size: 5px;
+    line-height: 22px;
+    text-align: center;
+    float: left;
+    width: 22px;
+    height : 22px;
+    border: 1px solid grey;
+    margin-right: 2px;
+    border-radius: 2px;
+}
+
+ul.wounds li.sep {
+    border: none;
+    width: 5px;
+}
+
+.points
+{
+    color: black;
+    opacity: .4;
+    z-index: 0;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 5em;
+}
+
+#templates{
+    display: none;
 }
